@@ -1,10 +1,15 @@
-<h1 align="center" >Modelo API REST 🧰 </h1>
-<p align="center"> repositorio destinado para o auxilio de criação e boas praticas no uso de API's REST</p>
+<h1 align="center" > 🧩 Bem-vind[oa] à JMY API REST</h1>
+<p align="center"> Este repositório surgiu da ideia de nós, estudantes e admiradores de APIs, criarmos uma documentação completa, simples e intuitiva, que mostre boas práticas no uso e desenvolvimento de APIs REST (ou RESTful).</p>
+<p align="center"> Nosso objetivo é ajudar ao máximo quem está começando agora nesse universo das APIs. Este é um repositório colaborativo e aberto a todos nós — sinta-se à vontade para explorar, aprender e contribuir! 💡</p>
 
 <h2 align="center">Sumário</h2>
 <ol>
   <li><a href="#introducao">Introdução a API REST</a></li>
+  <li><a href="#criar-api-express">Criando minha primeira API REST com Express.js</a></li>
+  <li><a href="#conectar-banco">Como conectar minha API a um Banco de Dados? </a></li>
   <li><a href="#metodos">Exemplo de metodos</a></li>
+  <li><a href="#api-com-typescript"></a>Como cria uma API em TypeScript?</li>
+  <li><a href="#contribuicao">Como contribuir no projeto?</a></li>
   <li><a href="#referencias">Referências</a></li>
 </ol>
 
@@ -64,6 +69,21 @@ server.get("/users", (request, response) => {
   response.status(200).send("Retorna uma Lista de Usuários");
 });
 ```
+<h2 align="center" id="contribuicao">Como contribuir?</h2>
+<p align="center">Siga o metodo abaixo, para contribuir em 4 passos simples:</p>
+
+<p>1 - Faça um fork deste repositório;</p>
+<p>2 - Crie uma nova branch para a sua modificação;</p>
+
+```shell
+git checkout -b minha-contribuicao
+```
+<p>3 - Faça suas alterações e envie um pull request (PR);</p>
+<p>4 - Aguarde o feedback e integração com o projeto principal.</p>
+<p>Caso queira entrar em contato, deixe uma mensagem nos meus canais de comunicação — ficarei feliz em trocar ideias e colaborar!</p>
+
+<p>🚀 Estamos juntos nessa jornada de aprendizado e construção de boas práticas em APIs REST!</p>
+
 
 <h2 align="center" id="referencias">Referências</h2>
 

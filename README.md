@@ -1,4 +1,4 @@
-<h1 align="center" > 🧩 Bem-vind[oa] à JMY API REST</h1>
+<h1 align="center" > 🧩 Bem-vind[oa] à My API REST</h1>
 <p align="center"> Este repositório surgiu da ideia de nós, estudantes e admiradores de APIs, criarmos uma documentação completa, simples e intuitiva, que mostre boas práticas no uso e desenvolvimento de APIs REST (ou RESTful).</p>
 <p align="center"> Nosso objetivo é ajudar ao máximo quem está começando agora nesse universo das APIs. Este é um repositório colaborativo e aberto a todos nós — sinta-se à vontade para explorar, aprender e contribuir! 💡</p>
 

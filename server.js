@@ -11,10 +11,27 @@ const port = 3000;
 
 // ---------------- rotas ---------------- //
 
-///O servidor chama as rotas mediante a função
+//O servidor chama as rotas mediante o metodo (get,post,put,patch,delete)
 server.get("/", (request, response) => {
-  //a rota chamada é um get
-  response.send("Hello, welcome to our API example"); // Returna como resposta a string com o texto
+  //a rota chamada é um GET
+  response.status(200).send("Hello, welcome to our API example"); // Returna como resposta a string com o texto
+}); // seguindo o padrão REST sempre temos que informar um status de resposta (200, 201, 400, 404, 500) e outros
+// nesse site tem alguns exemplos de status : https://www.devmedia.com.br/http-status-code/41222
+// nesse exemplo o get só retorna uma mensagem de boas vindas, mas pode retornar um JSON ou outros
+
+// ----------- metodo GET ------------ //
+server.get("/users", (request, response) => {
+  response.status(200).send("Retorna uma Lista de Usuários");
+});
+// metodo GET com um parametro
+server.get("/users/:id", (request, response) => {
+  const id = request.params.id;
+  response.status(200).send(`Retorna um usuário com o id ${id}`);
+});
+// metodo GET com uma query
+server.get("/users", (request, response) => {
+  const { name } = request.query;
+  response.status(200).send(`Retorna um usuário com o nome ${name}`);
 });
 
 //Por fim deixamos o server online no ip:'127.0.0.1' ou se colocarmos o ip sera o localhost e porta :3000

@@ -7,8 +7,8 @@
   <li><a href="#introducao">Introdução a API REST</a></li>
   <li><a href="#criar-api-express">Criando minha primeira API REST com Express.js</a></li>
   <li><a href="#conectar-banco">Como conectar minha API a um Banco de Dados? </a></li>
-  <li><a href="#metodos">Exemplo de metodos</a></li>
-  <li><a href="#api-com-typescript"></a>Como cria uma API em TypeScript?</li>
+  <li><a href="#metodos">Exemplos de metodos</a></li>
+  <li><a href="#api-com-typescript">Como cria uma API em TypeScript?</a></li>
   <li><a href="#contribuicao">Como contribuir no projeto?</a></li>
   <li><a href="#referencias">Referências</a></li>
 </ol>
@@ -54,6 +54,93 @@
 
 <p>Essas APIs geralmente trocam informações em formato JSON ou XML, permitindo que sistemas muito diferentes se entendam com facilidade.</p>
 
+<h2 align="center" id="criar-api-express">Criando minha primeira API REST com Express.js</h2>
+
+<p>Certifique-se que tenha instalado o Node.js e o gerenciado de pacotes npm </p>
+
+<a href="https://nodejs.org/pt/download"> Download do Node.js</a>
+
+<p>Normalmente ao instalar o Node.js o gerenciador de pacotes npm vem instalado junto</p>
+
+<h3>Com o Node.js e o npm instalados é só seguir esses passos:</h3>
+
+<h4>1º passo - instale os pacotes necessários</h4> 
+
+```shell
+npm init -y
+```
+> esse comando no terminal ira criar o arquivo package.json
+
+<p>para utilizar o pacote (framework) Express.js execute o seguinte comando no terminal </p>
+
+```shell
+npm i express
+```
+> assim você já consiguira usar o express com o JavaScript puro, será criado um arquivo package-lock.json
+
+<p>se preferir usar o TypeScript,você precisara usar outro comando no terminal, veja mais informações abaixo para o uso do TypeScript:</p>
+<a href="#api-com-typescript">Como cria uma API em TypeScript?</a>
+
+<h4>2º passo - criar o arquivo principal </h4>
+
+o nome desse arquivo fica a criteiro seu pode ser `app.js`,`main.js`, `ìndex.js`,`server.js`seu for usar JavaScript puro, se for usar o TypeScript como o exemplo desse repositorio é só mudar o final do arquivo para `.ts`
+
+o arquivo principal seque essa estrutura a depender de estamos utilixando JavaScript ou TypeScript 
+
+```js
+//Importa o pacote express
+import express  from "express";
+
+///Cria o servidor express
+const server = express();
+///Faz com que o servidor receba e envie JSON
+server.use(express.json());
+///Determina a porta que o servidor ira usar
+const port = 3000;
+
+///O server chama as rotas mediante a função 
+server.get('/', (request, response) => { //a rota chamada é um get 
+  response.send('Hello, welcome to our API example');// Returna como resposta a string com o texto 
+});
+///O servidor agora chama outra rota get
+server.get('/users', (request,response)=>{
+  response.status(200).json({ //Mas dessa vez retorna um JSON
+    name:"Joao",
+    cpf:"111.111.111-11"
+  })
+})
+
+///Por fim deixamos o server online no ip:localhost e porta :3000
+server.listen(port, () => { // O metodo listen cria a regra de ip e porta 
+  console.log(`O servidor está online na porta ${port}`);
+});
+```
+Para testarmos excultamos o codigo no terminal 
+
+```shell
+node nome-do-arquivo.js
+```
+ou
+
+```shell
+node nome-do-arquivo.ts
+```
+
+> podemos também criar um atalho dentro do package.json,como no exemplo do codigo:
+
+```package.json
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js"
+  },
+```
+
+> e chamado o atalho no terminal 
+
+```shell
+npm start
+```
+
 <h2 align="center" id="metodos">Exemplos de Metodos</h2>
 <h3>Metodo GET</h3>
 <p>O GET é um dos principais métodos HTTP usados em APIs RESTful.</p>
@@ -69,6 +156,10 @@ server.get("/users", (request, response) => {
   response.status(200).send("Retorna uma Lista de Usuários");
 });
 ```
+<h2 align="center" id="api-com-typescript">Como cria uma API em TypeScript?</h2>
+
+<p align="center">Sessão em construção ⚠️ </p> 
+
 <h2 align="center" id="contribuicao">Como contribuir?</h2>
 <p align="center">Siga o metodo abaixo, para contribuir em 4 passos simples:</p>
 

@@ -34,6 +34,40 @@ server.get("/users", (request, response) => {
   response.status(200).send(`Retorna um usuário com o nome ${name}`);
 });
 
+// ----------- metodo POST ------------ //
+server.post("/users", (request, response) => {
+  const { name, email } = request.body;
+  response
+    .status(201)
+    .send(`Cria um usuário com o nome ${name} e email ${email}`);
+});
+
+// ----------- metodo PUT ------------ //
+server.put("/users/:id", (request, response) => {
+  const id = request.params.id;
+  const { name, email } = request.body;
+  response
+    .status(200)
+    .send(`Atualiza um usuário com o id ${id} e nome ${name} e email ${email}`);
+});
+
+// ----------- metodo DELETE ------------ //
+server.delete("/users/:id", (request, response) => {
+  const id = request.params.id;
+  response.status(200).send(`Deleta um usuário com o id ${id}`);
+});
+
+// ----------- metodo PATCH ------------ //
+server.patch("/users/:id", (request, response) => {
+  const id = request.params.id;
+  const { name, email } = request.body;
+  response
+    .status(200)
+    .send(
+      `Atualiza parcialmente um usuário com o id ${id} e nome ${name} e email ${email}`,
+    );
+});
+
 //Por fim deixamos o server online no ip:'127.0.0.1' ou se colocarmos o ip sera o localhost e porta :3000
 server.listen(port, "127.0.0.1", () => {
   // O metodo listen cria a regra de ip e porta

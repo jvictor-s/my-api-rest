@@ -49,6 +49,7 @@ npm i pg
 ```
 > Com isso finalizamos a parte dos pacotes que precisamos instalar
 
+-----
 
 <h4>2º Passo - Criando o arquivo sequelize.js</h4>
 
@@ -112,15 +113,3 @@ export default sequelize;
 ```
 > Por ultimo exportamos o codigo para ser usado em outros arquivos
 
------
-
-<h4>3º Passo - usando o sequelize, para criação de entidades</h4>
-
------
-
-<p>Para utilizar o sequelize é bem simples, criamos um arquivo <code>Entidade.js</code></p>
-<p>e dentro dele fazermos a sequinte estrutura</p>
-```js
-import sequelize from "../database/sequelize.js";
-import { DataTypes } from "sequelize";
-```

@@ -6,7 +6,7 @@
 <ol>
   <li><a href="#introducao">Introdução a API REST</a></li>
   <li><a href="#criar-api-express">Criando minha primeira API REST com Express.js</a></li>
-  <li><a href="#conectar-banco">Como conectar minha API a um Banco de Dados? </a></li>
+  <li><a href="#api-conectar-banco">Como conectar minha API a um Banco de Dados? </a></li>
   <li><a href="#metodos">Exemplos de metodos</a></li>
   <li><a href="#api-com-typescript">Como cria uma API em TypeScript?</a></li>
   <li><a href="#contribuicao">Como contribuir no projeto?</a></li>
@@ -79,7 +79,7 @@ npm i express
 > assim você já consiguira usar o express com o JavaScript puro, será criado um arquivo package-lock.json
 
 <p>se preferir usar o TypeScript,você precisara usar outro comando no terminal, veja mais informações abaixo para o uso do TypeScript:</p>
-<a href="#api-com-typescript">Como cria uma API em TypeScript?</a>
+<a href="api-com-typescript">Como cria uma API em TypeScript?</a>
 
 <h4>2º passo - criar o arquivo principal </h4>
 
@@ -140,6 +140,8 @@ node nome-do-arquivo.ts
 ```shell
 npm start
 ```
+<h2 align="center" id="api-conectar-banco">Como conectar minha API a um banco de dados? </h2>
+
 
 <h2 align="center" id="metodos">Exemplos de Metodos</h2>
 <h3>Metodo GET</h3>

@@ -7,8 +7,8 @@
   <li><a href="#introducao">Introdução a API REST</a></li>
   <li><a href="#criar-api-express">Criando minha primeira API REST com Express.js</a></li>
   <li><a href="./src/database">Como conectar minha API a um Banco de Dados? </a></li>
-  <li><a href="#metodos">Exemplos de metodos</a></li>
-  <li><a href="#api-com-typescript">Como cria uma API em TypeScript?</a></li>
+  <li><a href="./models">Exemplos de metodos</a></li>
+  <li><a href="./typescript">Como cria uma API em TypeScript?</a></li>
   <li><a href="#contribuicao">Como contribuir no projeto?</a></li>
   <li><a href="#referencias">Referências</a></li>
 </ol>

@@ -113,3 +113,10 @@ export default sequelize;
 ```
 > Por ultimo exportamos o codigo para ser usado em outros arquivos
 
+-----
+
+<h4>3º Passo - Criamos um arquivo para ser colocado a estrutura da Tabela do nosso banco de dados </h4>
+
+-----
+
+<a href="../core"> Modelo de estrutura de tabela</a>

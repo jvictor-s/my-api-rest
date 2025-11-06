@@ -83,7 +83,7 @@ npm i express
 > assim você já consiguira usar o express com o JavaScript puro, será criado um arquivo package-lock.json
 
 <p>se preferir usar o TypeScript,você precisara usar outro comando no terminal, veja mais informações abaixo para o uso do TypeScript:</p>
-<a href="#api-com-typescript">Como cria uma API em TypeScript?</a>
+<a href="api-com-typescript">Como cria uma API em TypeScript?</a>
 
 -----
 
@@ -148,6 +148,7 @@ node nome-do-arquivo.ts
 ```shell
 npm start
 ```
+
 <h2 align="center" id="api-conectar-banco">Como Conectar minha API a um Banco de Dados?</h2>
 
 <p>Para criar uma conexão com o banco de dados você precisara de um ORM (Object-Relational Mapping), no nosso exemplo iremos utilizar o Sequelize.</p>

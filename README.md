@@ -23,7 +23,7 @@
 <h4>O exemplo do garçom</h4>
 <p>Todos que são da área da tecnologia, fazem faculdade ou até mesmo estudam API por conta propria já ouviram falar desse exemplo por um professor, colega de turma ou amigo, é isso mesmo não temos como fugir desse exemplo, querendo ou não é o mais simples e pratico para podermos entender o funcionamento de uma API.</p>
 
-<p>imagine que uma API funcione como um garçom em um restaurante:</p> 
+<p>imagine que uma API funcione como um garçom em um restaurante:</p>
 <ol>
   <li>O cliente (você) faz um pedido (requisição);</li>
   <li>O garçom (API) leva o pedido à cozinha (servidor);</li>
@@ -66,7 +66,7 @@
 
 -----
 
-<h4>1º Passo - instale os pacotes necessários</h4> 
+<h4>1º Passo - instale os pacotes necessários</h4>
 
 -----
 
@@ -93,7 +93,7 @@ npm i express
 
 o nome desse arquivo fica a criteiro seu pode ser `app.js`,`main.js`, `ìndex.js`,`server.js`seu for usar JavaScript puro, se for usar o TypeScript como o exemplo desse repositorio é só mudar o final do arquivo para `.ts`
 
-o arquivo principal seque essa estrutura a depender de estamos utilixando JavaScript ou TypeScript 
+o arquivo principal seque essa estrutura a depender de estamos utilixando JavaScript ou TypeScript
 
 ```js
 //Importa o pacote express
@@ -106,9 +106,9 @@ server.use(express.json());
 ///Determina a porta que o servidor ira usar
 const port = 3000;
 
-///O server chama as rotas mediante a função 
-server.get('/', (request, response) => { //a rota chamada é um get 
-  response.send('Hello, welcome to our API example');// Returna como resposta a string com o texto 
+///O server chama as rotas mediante a função
+server.get('/', (request, response) => { //a rota chamada é um get
+  response.send('Hello, welcome to our API example');// Returna como resposta a string com o texto
 });
 ///O servidor agora chama outra rota get
 server.get('/users', (request,response)=>{
@@ -119,11 +119,11 @@ server.get('/users', (request,response)=>{
 })
 
 ///Por fim deixamos o server online no ip:localhost e porta :3000
-server.listen(port, () => { // O metodo listen cria a regra de ip e porta 
+server.listen(port, () => { // O metodo listen cria a regra de ip e porta
   console.log(`O servidor está online na porta ${port}`);
 });
 ```
-Para testarmos excultamos o codigo no terminal 
+Para testarmos excultamos o codigo no terminal
 
 ```shell
 node nome-do-arquivo.js
@@ -143,7 +143,7 @@ node nome-do-arquivo.ts
   },
 ```
 
-> e chamado o atalho no terminal 
+> e chamado o atalho no terminal
 
 ```shell
 npm start
@@ -165,7 +165,7 @@ npm start
 ```shell
 npm install sequelize
 ```
-> Com isso será baixado os pacotes necessarios para o uso do 
+> Com isso será baixado os pacotes necessarios para o uso do
 <a href="https://sequelize.org/" >Sequelize</a>
 <br>
 <p>Como alguns dados de conexão são sensiveis, precisamos oculta-los, por isso iremos usar o pacote <a href="https://www.npmjs.com/package/dotenv">dotenv</a> </p>
@@ -191,7 +191,7 @@ PG_PASSWORD = postgres
 ```
 > Nesse exemplo colocamos as configurações de IP e porta, mas não são necessarias a depender do projeto.
 
-<br> 
+<br>
 <p> Iremos precisar também do pacote <a href="https://www.npmjs.com/package/pg">pg</a> para podermos usar o postgres client</p>
 <p>Para instalar o pacote é simples, é só acessar o terminal e colocar o comando abaixo:</p>
 
@@ -291,9 +291,10 @@ server.get("/users", (request, response) => {
   response.status(200).send("Retorna uma Lista de Usuários");
 });
 ```
+
 <h2 align="center" id="api-com-typescript">Como cria uma API em TypeScript?</h2>
 
-<p align="center">Sessão em construção ⚠️ </p> 
+<p align="center">Sessão em construção ⚠️ </p>
 
 <h2 align="center" id="contribuicao">Como contribuir?</h2>
 <p align="center">Siga o metodo abaixo, para contribuir em 4 passos simples:</p>
@@ -317,5 +318,3 @@ git checkout -b minha-contribuicao
   <li><a href="https://www.redhat.com/pt-br/topics/api/what-is-a-rest-api">O que é uma API REST?</a></li>
   <li><a href="https://aws.amazon.com/pt/what-is/api/">O que é uma API (interface de programação de aplicações)?</a></li>
 </ul>
-
-

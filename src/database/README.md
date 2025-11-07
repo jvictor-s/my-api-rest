@@ -120,3 +120,9 @@ export default sequelize;
 -----
 
 <a href="../core"> Modelo de estrutura de tabela</a>
+
+<br>
+
+<strong>Exemplo do arquivo sequelize.js</strong>
+<br>
+<a href="../src/database/sequelize.js">sequelize.js</a>

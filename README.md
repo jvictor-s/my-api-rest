@@ -6,9 +6,9 @@
 <ol>
   <li><a href="#introducao">Introdução a API REST</a></li>
   <li><a href="#criar-api-express">Criando minha primeira API REST com Express.js</a></li>
-  <li><a href="./src/database">Como conectar minha API a um Banco de Dados? </a></li>
-  <li><a href="./models">Exemplos de metodos</a></li>
-  <li><a href="./typescript">Como cria uma API em TypeScript?</a></li>
+  <li><a href="./src/database/README.md">Como conectar minha API a um Banco de Dados? </a></li>
+  <li><a href="./models/README.md">Exemplos de metodos</a></li>
+  <li><a href="./typescript/README.md">Como criar uma API em TypeScript?</a></li>
   <li><a href="#contribuicao">Como contribuir no projeto?</a></li>
   <li><a href="#referencias">Referências</a></li>
 </ol>
@@ -70,84 +70,114 @@
 
 -----
 
+<p>No terminal coloquei o seguinte código: </p>
+
 ```shell
 npm init -y
-```import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
-dotenv.config();
+```
+> iniciando o npm, será gerado o arquivo
+`package.json`
 
-const sequelize = new Sequelize(
-  process.env.PG_DATABASE,
-  process.env.PG_USERNAME,
-  process.env.PG_PASSWORD,
-  {
-    host: process.env.PG_HOST,
-    dialect: "postgres",
+<br>
+
+<strong>Obs: devemos trocar o Common JS pelo o ES Module , pois o module, é uma novo modelo de trabalho com modulos do JavaScript mais moderno e que possui melhor compatibilidade com os navegadores </strong>
+
+<p>Abra o arquivo <code>package.json</code>, nele você verá a seguinte estrutura: </p>
+
+```JSON
+{
+  "name": "nome-do-projeto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
-);
-
-async function testarconexao(params) {
-  try {
-    await sequelize.authenticate();
-    console.log("Conexão estabelecida com sucesso! =D");
-  } catch (erro) {
-    console.log("Não foi possivel se conectar ao banco de dados: ", erro);
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
   }
 }
+```
+<p>Na parte do código onde o tipo está "commonjs", você ira substituir por "module", como o exemplo abaixo está mostrar: </p>
 
-testarconexao();
+```shell
+"type": "module"
+```
+> após a substituição é śo salvar o arquivo
 
-export default sequelize;
-> esse comando no terminal ira criar o arquivo package.json
+<br>
 
-<p>para utilizar o pacote (framework) Express.js execute o seguinte comando no terminal </p>
+<p>Voltando ao terminal é só colocar:</p>
 
 ```shell
 npm i express
 ```
-> assim você já consiguira usar o express com o JavaScript puro, será criado um arquivo package-lock.json
+> assim você já consiguira usar o express. Será criado também um arquivo chamado
+`package-lock.json`
 
-<p>se preferir usar o TypeScript,você precisara usar outro comando no terminal, veja mais informações abaixo para o uso do TypeScript:</p>
-<a href="api-com-typescript">Como cria uma API em TypeScript?</a>
+<p>para verificar se realmente o express foi instalado é só acessar o arquivo <code>package.json</code></p> 
+<p>na parte das depencias você verá que estará desse jeito:</p>
+
+```shell
+"dependencies": {
+    "express": "^numero-da-versao-do-express"
+  }
+```
+<p>se preferir usar o TypeScript,você precisara usar outros comandos no terminal e baixar outros pacotes, veja mais informações abaixo para o uso do TypeScript:</p>
+<a href="./typescript/README.md">Como criar uma API em TypeScript?</a>
 
 -----
 
 <h4>2º Passo - criar o arquivo principal </h4>
 
 -----
+<p>O nome desse arquivo fica a criteiro seu, e pode ser <code>app.js</code> ,<code>main.js</code>, <code>ìndex.js</code>,<code>server.js</code> se for usar JavaScript, porém se for usar o TypeScript é só mudar o final do arquivo para <code>.ts</code> </p>
 
-o nome desse arquivo fica a criteiro seu pode ser `app.js`,`main.js`, `ìndex.js`,`server.js`seu for usar JavaScript puro, se for usar o TypeScript como o exemplo desse repositorio é só mudar o final do arquivo para `.ts`
-
-o arquivo principal seque essa estrutura a depender de estamos utilixando JavaScript ou TypeScript
+<p>o arquivo principal seque essa estrutura a depender de estamors utilixando JavaScript ou TypeScript</p>
 
 ```js
-//Importa o pacote express
 import express  from "express";
+```
+> Importa o pacote express
+<br>
 
-///Cria o servidor express
+```js
 const server = express();
-///Faz com que o servidor receba e envie JSON
-server.use(express.json());
-///Determina a porta que o servidor ira usar
-const port = 3000;
+```
+> Cria o servidor express
+<br>
 
-///O server chama as rotas mediante a função
+```js
+server.use(express.json());
+```
+> Faz com que o servidor receba e envie JSON
+<br>
+
+```js
+const port = 3000;
+```
+> Determina a porta que o servidor ira usar
+<br>
+
+``` js
 server.get('/', (request, response) => { //a rota chamada é um get
   response.send('Hello, welcome to our API example');// Returna como resposta a string com o texto
 });
-///O servidor agora chama outra rota get
-server.get('/users', (request,response)=>{
-  response.status(200).json({ //Mas dessa vez retorna um JSON
-    name:"Joao",
-    cpf:"111.111.111-11"
-  })
-})
+```
+> O server chama as rotas mediante a função
+<br>
 
-///Por fim deixamos o server online no ip:localhost e porta :3000
+```js
 server.listen(port, () => { // O metodo listen cria a regra de ip e porta
   console.log(`O servidor está online na porta ${port}`);
 });
 ```
+> Por fim deixamos o server online no ip:localhost e porta :3000
+<br>
+
 Para testarmos excultamos o codigo no terminal
 
 ```shell
@@ -158,8 +188,9 @@ ou
 ```shell
 node nome-do-arquivo.ts
 ```
+<br>
 
-> podemos também criar um atalho dentro do package.json,como no exemplo do codigo:
+<p>podemos também criar um atalho dentro do package.json, como no exemplo do codigo:</p>
 
 ```package.json
 "scripts": {
@@ -168,7 +199,7 @@ node nome-do-arquivo.ts
   },
 ```
 
-> e chamado o atalho no terminal
+<p>e chamando o atalho no terminal</p> 
 
 ```shell
 npm start
